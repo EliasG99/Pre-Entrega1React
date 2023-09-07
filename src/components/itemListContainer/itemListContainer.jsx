@@ -1,16 +1,30 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const itemListContainer = ({ greeting }) => {
+import Card from 'react-bootstrap/Card';
+import {Link} from "react-router-dom"
+const itemListContainer = ({ ProductData }) => {
   return (
-    <div className="container mt-4">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="text-center">
-            <h1>{greeting}</h1>
-          </div>
-        </div>
-      </div>
+    <div>
+    {ProductData.map((item) =>{
+      return (
+        <Card style={{ width: '18rem' }} key={item.id}>
+      <Card.Img variant="top" src={item.pictureUrl} />
+      <Card.Body>
+        <Card.Title>{item.name}</Card.Title>
+        <Card.Text>
+          {item.description}
+        </Card.Text>
+        <Link to={`/item/${item.id}`}>Ir a Detalle</Link>
+      </Card.Body>
+    </Card>
+
+
+
+      )
+
+
+    })}
     </div>
   );
 };

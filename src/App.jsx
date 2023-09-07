@@ -1,21 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarComponent from './components/NavBarComponent/NavBarComponent';
-import ItemListContainer from './components/itemListContainer/itemListContainer';
+
+
+import MainRouter from './routes/MainRouter';
 
 
 const App = () => {
 
-
-
-
-
-
    return (
     <div>
-      <NavbarComponent/>
-      <ItemListContainer greeting="¡Bienvenido a Tiendum!" />
-     
+    
+      <main>
+      <MainRouter />
+      </main>
+
     </div>
+  
+    
    )
 }
 
